@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LearnHub Online Learning Portal</title>
+
+<style>
+
+/* Body */
+body {
+    font-family: Arial;
+    margin: 0;
+    background-color: #f4f6fb;
+}
+
+/* Navigation */
+nav {
+    background-color: #202b50;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav h2 {
+    color: #ffd166;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+/* Welcome section */
+header {
+    background-color: #5369aa;
+    color: white;
+    text-align: center;
+    padding: 55px 15px;
+}
+
+header button {
+    background-color: #ffd166;
+    color: black;
+}
+
+/* Common section */
+section {
+    padding: 35px 7%;
+}
+
+h2 {
+    text-align: center;
+    color: #202b50;
+    margin-bottom: 25px;
+}
+
+/* Categories */
+.categories {
+    text-align: center;
+}
+
+.category {
+    background-color: white;
+    display: inline-block;
+    padding: 18px;
+    margin: 8px;
+    border-radius: 10px;
+}
+
+/* Course cards */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    width: 230px;
+    margin: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px #ccc;
+}
+
+.card-top {
+    background-color: #354b85;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 35px;
+}
+
+.card-info {
+    padding: 15px;
+}
+
+.card-info h3 {
+    color: #202b50;
+}
+
+.card-info p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Buttons */
+button {
+    background-color: #354b85;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button {
+    width: 100%;
+}
+
+/* Course details table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 13px;
+    text-align: left;
+}
+
+th {
+    background-color: #354b85;
+    color: white;
+}
+
+/* Enrollment form */
+.form {
+    background-color: white;
+    max-width: 500px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px #ccc;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 95%;
+    padding: 10px;
+    margin-top: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.fee {
+    background-color: #eef1ff;
+    padding: 12px;
+    margin-top: 15px;
+}
+
+.submit {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Confirmation */
+#result {
+    display: none;
+    background-color: #e2f7e9;
+    color: green;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+/* FAQ */
+.faq {
+    background-color: white;
+    margin: 12px auto;
+    max-width: 700px;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.faq button {
+    width: 100%;
+    text-align: left;
+}
+
+.answer {
+    display: none;
+    padding: 15px;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background-color: #202b50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Mobile responsive design */
+@media(max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    section {
+        padding: 25px 5%;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <h2>LearnHub</h2>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#enroll">Enroll</a>
+        <a href="#faq">FAQ</a>
+    </div>
+</nav>
+
+<!-- HOME -->
+<header id="home">
+    <h1>Learn Today, Lead Tomorrow!</h1>
+
+    <p>Explore new skills and build your future with LearnHub.</p>
+
+    <button onclick="location.href='#courses'">
+        Explore Courses
+    </button>
+</header>
+
+<!-- COURSE CATEGORIES -->
+<section>
+
+    <h2>Course Categories</h2>
+
+    <div class="categories">
+
+        <div class="category">💻 Programming</div>
+
+        <div class="category">🌐 Web Development</div>
+
+        <div class="category">📊 Data Science</div>
+
+        <div class="category">🎨 Designing</div>
+
+    </div>
+
+</section>
+
+<!-- COURSE CARDS -->
+<section id="courses">
+
+    <h2>Our Popular Courses</h2>
+
+    <div class="container">
+
+        <!-- Python -->
+        <div class="card">
+
+            <div class="card-top">💻</div>
+
+            <div class="card-info">
+
+                <h3>Python Programming</h3>
+
+                <p>Instructor: Rahul Sharma</p>
+
+                <p>Duration: 8 Weeks</p>
+
+                <p>Fees: ₹2,500</p>
+
+                <p>Learn Python basics, functions and programming logic.</p>
+
+                <button onclick="selectCourse('2500')">
+                    Enroll Now
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="card">
+
+            <div class="card-top">🌐</div>
+
+            <div class="card-info">
+
+                <h3>Web Development</h3>
+
+                <p>Instructor: Priya Verma</p>
+
+                <p>Duration: 10 Weeks</p>
+
+                <p>Fees: ₹3,000</p>
+
+                <p>Learn HTML, CSS and JavaScript to build websites.</p>
+
+                <button onclick="selectCourse('3000')">
+                    Enroll Now
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Data Science -->
+        <div class="card">
+
+            <div class="card-top">📊</div>
+
+            <div class="card-info">
+
+                <h3>Data Science</h3>
+
+                <p>Instructor: Aman Gupta</p>
+
+                <p>Duration: 12 Weeks</p>
+
+                <p>Fees: ₹4,000</p>
+
+                <p>Understand data analysis and visualization.</p>
+
+                <button onclick="selectCourse('4000')">
+                    Enroll Now
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Graphic Designing -->
+        <div class="card">
+
+            <div class="card-top">🎨</div>
+
+            <div class="card-info">
+
+                <h3>Graphic Designing</h3>
+
+                <p>Instructor: Neha Singh</p>
+
+                <p>Duration: 6 Weeks</p>
+
+                <p>Fees: ₹2,000</p>
+
+                <p>Learn creative designing and visual communication.</p>
+
+                <button onclick="selectCourse('2000')">
+                    Enroll Now
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- COURSE DETAILS TABLE -->
+<section>
+
+    <h2>Course Details</h2>
+
+    <table>
+
+        <tr>
+            <th>Course</th>
+            <th>Instructor</th>
+            <th>Duration</th>
+            <th>Fees</th>
+        </tr>
+
+        <tr>
+            <td>Python Programming</td>
+            <td>Rahul Sharma</td>
+            <td>8 Weeks</td>
+            <td>₹2,500</td>
+        </tr>
+
+        <tr>
+            <td>Web Development</td>
+            <td>Priya Verma</td>
+            <td>10 Weeks</td>
+            <td>₹3,000</td>
+        </tr>
+
+        <tr>
+            <td>Data Science</td>
+            <td>Aman Gupta</td>
+            <td>12 Weeks</td>
+            <td>₹4,000</td>
+        </tr>
+
+        <tr>
+            <td>Graphic Designing</td>
+            <td>Neha Singh</td>
+            <td>6 Weeks</td>
+            <td>₹2,000</td>
+        </tr>
+
+    </table>
+
+</section>
+
+<!-- ENROLLMENT FORM -->
+<section id="enroll">
+
+    <h2>Course Enrollment Form</h2>
+
+    <div class="form">
+
+        <form onsubmit="enroll(); return false;">
+
+            <label>Full Name</label>
+
+            <input type="text" id="name"
+            placeholder="Enter your name">
+
+            <label>Email Address</label>
+
+            <input type="email" id="email"
+            placeholder="Enter your email">
+
+            <label>Phone Number</label>
+
+            <input type="text" id="phone"
+            placeholder="Enter 10 digit mobile number">
+
+            <label>Select Course</label>
+
+            <select id="course" onchange="calculateFee()">
+
+                <option value="">Select a Course</option>
+
+                <option value="2500">Python Programming</option>
+
+                <option value="3000">Web Development</option>
+
+                <option value="4000">Data Science</option>
+
+                <option value="2000">Graphic Designing</option>
+
+            </select>
+
+            <div class="fee">
+
+                <h3>Total Course Fee: ₹<span id="total">0</span></h3>
+
+            </div>
+
+            <button type="submit" class="submit">
+                Submit Enrollment
+            </button>
+
+        </form>
+
+        <div id="result"></div>
+
+    </div>
+
+</section>
+
+<!-- FAQ SECTION -->
+<section id="faq">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">
+
+        <button onclick="showAnswer(1)">
+            1. How can I enroll in a course? +
+        </button>
+
+        <p class="answer" id="answer1">
+            Select your course, fill the enrollment form and submit it.
+        </p>
+
+    </div>
+
+    <div class="faq">
+
+        <button onclick="showAnswer(2)">
+            2. Are the courses beginner-friendly? +
+        </button>
+
+        <p class="answer" id="answer2">
+            Yes, our courses are designed for beginners and experienced learners.
+        </p>
+
+    </div>
+
+    <div class="faq">
+
+        <button onclick="showAnswer(3)">
+            3. Will I receive a certificate? +
+        </button>
+
+        <p class="answer" id="answer3">
+            Yes, learners can receive a certificate after completing the course.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>© 2026 LearnHub Online Learning Portal</p>
+
+    <p>All Rights Reserved</p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+// Select course from card
+function selectCourse(price) {
+
+    document.getElementById("course").value = price;
+
+    calculateFee();
+
+    document.getElementById("enroll").scrollIntoView();
+
+}
+
+// Calculate course fee
+function calculateFee() {
+
+    var price = document.getElementById("course").value;
+
+    document.getElementById("total").innerHTML = price || 0;
+
+}
+
+// Enrollment form
+function enroll() {
+
+    var name = document.getElementById("name").value;
+
+    var email = document.getElementById("email").value;
+
+    var phone = document.getElementById("phone").value;
+
+    var course = document.getElementById("course").value;
+
+    var result = document.getElementById("result");
+
+    // Check empty fields
+    if (name == "" || email == "" || phone == "" || course == "") {
+
+        alert("Please fill all the details!");
+
+    }
+
+    // Check phone number
+    else if (phone.length != 10 || isNaN(phone)) {
+
+        alert("Please enter a valid 10 digit phone number!");
+
+    }
+
+    else {
+
+        result.style.display = "block";
+
+        result.innerHTML =
+        "<h3>Enrollment Successful!</h3>" +
+        "Welcome " + name +
+        "<br>Course Fee: ₹" + course;
+
+    }
+
+}
+
+// FAQ function
+function showAnswer(number) {
+
+    var answer = document.getElementById("answer" + number);
+
+    if (answer.style.display == "block") {
+
+        answer.style.display = "none";
+
+    }
+
+    else {
+
+        answer.style.display = "block";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
